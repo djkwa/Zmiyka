@@ -24,7 +24,18 @@ class Snake{
     update(){
         this.swap();
         this.checkEdgeCollision();
+        this.checkFoodCollision();
     }
+    checkFoodCollision(){
+    const first=this.cells[0];
+    if (first.pos.equals(this.food.pos))
+    {
+    const newCell=new Cell();
+    newCell.pos.set(first.pos).add(this.vel)
+    this.cells.unshift(newCell);
+    this.food = new Cell();
+    }
+  }
     checkEdgeCollision(){
         const first = this.cells[0];
         if( first.pos.x > 19 ){ first.pos.x = 0}
@@ -47,7 +58,7 @@ class Snake{
                 this.vel.set(0,-1);
                 break;
             default:
-                break;   
+                break;
         }
     }
     swap(){
