@@ -2,7 +2,8 @@ let snake;
 function setup(){
     createCanvas(400, 400);
     snake = new Snake();
-    frameRate(5);
+    textSize(32);
+    textAlign(CENTER);
 }
 function keyPressed(e){
     snake.move(e.key);
@@ -14,6 +15,6 @@ function draw(){
     rect(0,0,400,400);
     snake.update();
     snake.draw();
-}
-
-
+    frameRate(snake.cells.length +2);
+    text('Score: '+ (snake.cells.length - 1), width - 100, 50);
+  }
