@@ -19,6 +19,7 @@ class Snake{
     start(){
         this.cells = [ new Cell() ];
         this.vel = createVector(1,0);
+        this.food = new Cell();
     }
     update(){
         this.swap();
@@ -59,5 +60,6 @@ class Snake{
         this.cells.forEach( cell => {
             cell.draw();
         })
-    }
+        this.food.draw();
+;    }
 }
