@@ -46,15 +46,27 @@ class Snake{
     move(key){
         switch(key){
             case 'ArrowLeft':
+            if(this.vel.x==1){
+            this.cells.reverse();
+          }
                 this.vel.set(-1,0);
                 break;
             case 'ArrowRight':
+            if(this.vel.x==-1){
+            this.cells.reverse();
+          }
                 this.vel.set(1,0);
                 break;
             case 'ArrowDown':
+            if(this.vel.y==-1){
+            this.cells.reverse();
+          }
                 this.vel.set(0,1);
                 break;
             case 'ArrowUp':
+            if(this.vel.y==1){
+            this.cells.reverse();
+          }
                 this.vel.set(0,-1);
                 break;
             default:
