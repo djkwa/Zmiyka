@@ -21,8 +21,8 @@ function draw(){
       snake.update();
       snake.draw();
       frameRate(snake.cells.length +2);
-      text('Score: '+ (snake.cells.length - 1), width - 100, 50);
+      text('Скоре: '+ (snake.cells.length - 1), width - 100, 50);
     } else{
-      text('Game over \n Score: '+ (snake.cells.length - 1) + '\n press space to continue', 200, 150);
+      text('Гаме овэр \n Скоре: '+ (snake.cells.length - 1) + '\n Прэс спэйс ту континуэ', 200, 150);
     }
   }
