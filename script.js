@@ -6,6 +6,10 @@ function setup(){
     textAlign(CENTER);
 }
 function keyPressed(e){
+  if(snake.isDead && e.key == " "){
+    snake.start();
+    return false;
+  }
     snake.move(e.key);
 }
 function draw(){
@@ -19,6 +23,6 @@ function draw(){
       frameRate(snake.cells.length +2);
       text('Score: '+ (snake.cells.length - 1), width - 100, 50);
     } else{
-      text('Game over \n Score: '+ (snake.cells.length - 1) + '\n press space to continue', width - 100, 50);
+      text('Game over \n Score: '+ (snake.cells.length - 1) + '\n press space to continue', 200, 150);
     }
   }
