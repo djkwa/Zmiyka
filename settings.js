@@ -20,14 +20,24 @@ class Snake{
         this.cells = [ new Cell() ];
         this.vel = createVector(1,0);
         this.food = new Cell();
+        this.isDead = false;
     }
     update(){
         this.swap();
         this.checkEdgeCollision();
         this.checkFoodCollision();
+        this.checkSelfCollision();
+    }
+    checkSelfCollision(){
+      const first = this.cells[0];
+      if( this.cells.filter( (cell, i) => {
+        return i != 0 && first.pos.equals(cell.pos);
+      }).length ){
+        this.isDead = true;
+      }
     }
     checkFoodCollision(){
-    const first=this.cells[0];
+    const first = this.cells[0];
     if (first.pos.equals(this.food.pos))
     {
     const newCell=new Cell();

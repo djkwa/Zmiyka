@@ -13,8 +13,12 @@ function draw(){
     noFill();
     stroke(0);
     rect(0,0,400,400);
-    snake.update();
-    snake.draw();
-    frameRate(snake.cells.length +2);
-    text('Score: '+ (snake.cells.length - 1), width - 100, 50);
+    if(!snake.isDead){
+      snake.update();
+      snake.draw();
+      frameRate(snake.cells.length +2);
+      text('Score: '+ (snake.cells.length - 1), width - 100, 50);
+    } else{
+      text('Game over \n Score: '+ (snake.cells.length - 1) + '\n press space to continue', width - 100, 50);
+    }
   }
