@@ -33,5 +33,11 @@ function draw(){
       }
       console.log(maxScore);
       text('Рекорд: ' + maxScore, 80, 50);
+      $('.video').css('display','block');
+      $(".video").get(0).play();
+      $('.video').removeClass('video');
+        setTimeout(function(){
+          $('.video-container').css('display','none');
+      },7000);
     }
   }
