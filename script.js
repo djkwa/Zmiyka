@@ -34,3 +34,6 @@ function draw(){
       },7000);
     }
   }
+  function newd(){
+  location.reload();
+}
