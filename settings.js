@@ -6,12 +6,27 @@ class Cell{
         this.edge = 20;
     }
     draw(){
-        fill('red');
-        stroke('yellow');
+        fill(255, 255, 255);
+        stroke(0, 0, 0);
         rect(this.pos.x * this.edge, this.pos.y * this.edge, this.edge, this.edge);
     }
 }
+class Foodd{
+    constructor(){
+        const x = floor(random(19));
+        const y = floor(random(19));
+        this.pos = createVector(x,y);
+        this.edge = 20;
+    }
+    draw(){
+        fill(255, 194, 51);
+        stroke(235, 137, 124);
+        rect(this.pos.x * this.edge, this.pos.y * this.edge, this.edge, this.edge);
+    }
+}
+function video(){
 
+  }
 class Snake{
     constructor(){
         this.start();
@@ -19,7 +34,7 @@ class Snake{
     start(){
         this.cells = [ new Cell() ];
         this.vel = createVector(1,0);
-        this.food = new Cell();
+        this.food = new Foodd();
         this.isDead = false;
     }
     update(){
@@ -43,7 +58,7 @@ class Snake{
     const newCell=new Cell();
     newCell.pos.set(first.pos).add(this.vel)
     this.cells.unshift(newCell);
-    this.food = new Cell();
+    this.food = new Foodd();
     }
   }
     checkEdgeCollision(){
@@ -94,5 +109,5 @@ class Snake{
             cell.draw();
         })
         this.food.draw();
-;    }
+     }
 }

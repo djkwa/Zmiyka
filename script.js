@@ -14,7 +14,7 @@ function keyPressed(e){
     snake.move(e.key);
 }
 function draw(){
-    background(150);
+    background(43, 40, 130);
     noFill();
     stroke(0);
     rect(0,0,400,400);
@@ -22,9 +22,10 @@ function draw(){
       snake.update();
       snake.draw();
       frameRate(snake.cells.length +2);
-      text('Скоре: '+ (snake.cells.length - 1), width - 100, 50); 
-      
+      text('Скоре: '+ (snake.cells.length - 1), width - 100, 50);
+
     } else{
+      snake.draw();
       text('Гаме овэр \n Скоре: '+ (snake.cells.length - 1) + '\n Прэс спэйс ту континуэ', 200, 150);
       let score = snake.cells.length-1;
       if (score>maxScore) {
