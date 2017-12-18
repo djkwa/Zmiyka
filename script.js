@@ -1,5 +1,4 @@
 let snake;
-let maxScore=0;
 function setup(){
     createCanvas(400, 400);
     snake = new Snake();
@@ -26,13 +25,7 @@ function draw(){
 
     } else{
       snake.draw();
-      text('Гаме овэр \n Скоре: '+ (snake.cells.length - 1) + '\n Прэс спэйс ту континуэ', 200, 150);
-      let score = snake.cells.length-1;
-      if (score>maxScore) {
-        maxScore = score;
-      }
-      console.log(maxScore);
-      text('Рекорд: ' + maxScore, 80, 50);
+      text('Гаме овэр \n Скоре: '+ (snake.cells.length - 1), 200, 150);
       $('.video').css('display','block');
       $(".video").get(0).play();
       $('.video').removeClass('video');
